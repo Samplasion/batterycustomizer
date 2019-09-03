@@ -1,7 +1,7 @@
 // #pragma Definitions
 
 #define settingsPath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/com.samplasion.batterycustomizerprefs.plist"]
-#define LOG(logged) NSLog(@"%@", logged)
+#define LOG(NSString *logged) NSLog(@"%@", logged)
 
 NSMutableDictionary *prefs;
 bool enabled;
@@ -49,7 +49,7 @@ static void loadPrefs() {
 // #pragma - Full battery fill color
 - (void)setFillColor:(UIColor *)color {
   if (enabled) {
-    LOG("Fill");
+    LOG(@"Fill");
     %orig(batteryFill);
   } else {
     %orig;
@@ -59,7 +59,7 @@ static void loadPrefs() {
 // #pragma - Battery percentage shown in battery
 - (void)setShowsPercentage:(BOOL)shows {
   if (enabled) {
-    LOG("Inside Percentage");
+    LOG(@"Inside Percentage");
     %orig(levelIndicator);
   } else {
     %orig;
@@ -69,7 +69,7 @@ static void loadPrefs() {
 // #pragma - Battery pin color
 - (void)setPinColor:(UIColor *)color {
   if (enabled) {
-    LOG("Pin");
+    LOG(@"Pin");
     %orig(batteryPin);
   } else {
     %orig;
@@ -79,7 +79,7 @@ static void loadPrefs() {
 // #pragma - Battery body color
 - (void)setBodyColor:(UIColor *)color {
   if (enabled) {
-    LOG("Body");
+    LOG(@"Body");
     %orig(batteryBody);
   } else {
     %orig;
@@ -89,7 +89,7 @@ static void loadPrefs() {
 // #pragma - Charging indicator
 - (void)setShowsInlineChargingIndicator:(BOOL)shows {
   if (enabled) {
-    LOG("Indicator");
+    LOG(@"Indicator");
     %orig(chargingIndicator);
   } else {
     %orig;
@@ -102,7 +102,7 @@ static void loadPrefs() {
 
 -(void)setTextColor:(UIColor *)color {
   if (enabled && [self.text hasSuffix:@"%"]) {
-    LOG("Outside Percentage");
+    LOG(@"Outside Percentage");
     %orig(percentageColor);
   } else {
     %orig;
@@ -112,7 +112,7 @@ static void loadPrefs() {
 %end
 
 %ctor {
-  LOG("[Start] Tweak \"BatteryCustomizer\" just started, loading preferences...");
+  LOG(@"[Start] Tweak \"BatteryCustomizer\" just started, loading preferences...");
   loadPrefs();
-  LOG("[Start] Tweak \"BatteryCustomizer\", loaded preferences");
+  LOG(@"[Start] Tweak \"BatteryCustomizer\", loaded preferences");
 }
