@@ -2,7 +2,7 @@
 
 #define settingsPath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/com.samplasion.batterycustomizerprefs.plist"]
 static void LOG(NSString *logged) {
-  NSLog(@"%@", logged);
+  NSLog(@"[BatteryCustomizer] %@", logged);
 }
 
 NSMutableDictionary *prefs;
@@ -114,7 +114,7 @@ static void loadPrefs() {
 %end
 
 %ctor {
-  LOG(@"[Start] Tweak \"BatteryCustomizer\" just started, loading preferences...");
+  LOG(@"Started, loading preferences...");
   loadPrefs();
-  LOG(@"[Start] Tweak \"BatteryCustomizer\", loaded preferences");
+  LOG(@"Loaded preferences");
 }
