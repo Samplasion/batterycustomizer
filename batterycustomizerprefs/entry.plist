@@ -1,0 +1,10 @@
+{
+	"entry" = {
+		bundle = "BatteryCustomizerPrefs";
+		cell = "PSLinkCell";
+		detail = "BCPRootListController";
+		icon = "icon.png";
+		isController = yes;
+		label = "BatteryCustomizer";
+	};
+}

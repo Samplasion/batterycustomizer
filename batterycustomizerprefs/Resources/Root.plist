@@ -1,0 +1,125 @@
+{
+	"items" = (
+		{
+			cell = "PSGroupCell";
+			label = "Enable tweak";
+		},
+		{
+			cell = "PSSwitchCell";
+			cellClass = "BCPSwitchTableCell";
+			default = yes;
+			defaults = "com.samplasion.batterycustomizerprefs";
+			key = "enabled";
+			label = "Enable";
+		},
+		{
+			cell = "PSGroupCell";
+			footerText = "If this is disabled and \"Show battery level\" is enabled, the battery fill color will brighten up a bit and get a greenish tint when charging.";
+			label = "";
+		},
+		{
+			cell = "PSSwitchCell";
+			cellClass = "BCPSwitchTableCell";
+			default = yes;
+			defaults = "com.samplasion.batterycustomizerprefs";
+			key = "chargingindicator";
+			label = "Show charging indicator";
+		},
+		{
+			cell = "PSGroupCell";
+			footerText = "Enabling this will dim the battery fill color a bit.";
+			label = "";
+		},
+		{
+			cell = "PSSwitchCell";
+			cellClass = "BCPSwitchTableCell";
+			default = yes;
+			defaults = "com.samplasion.batterycustomizerprefs";
+			key = "levelindicator";
+			label = "Show battery level";
+		},
+		{
+			cell = "PSGroupCell";
+			footerText = "When \"Show battery level\" is enabled, the battery fill color is dimmed and the percentage is shown as its same color.";
+			label = "";
+		},
+		{
+			cell = "PSLinkCell";
+			cellClass = "PFSimpleLiteColorCell";
+			label = "Battery fill/percentage color";
+			libcolorpicker = {
+				alpha = yes;
+				defaults = "com.samplasion.batterycustomizerprefs";
+				fallback = "#ff0000";
+				key = "batteryfill";
+			};
+		},
+		{
+			cell = "PSGroupCell";
+			footerText = "This sets the color for the battery percentage that can be enabled in the Battery settings.";
+			label = "";
+		},
+		{
+			cell = "PSLinkCell";
+			cellClass = "PFSimpleLiteColorCell";
+			label = "External percentage color";
+			libcolorpicker = {
+				alpha = yes;
+				defaults = "com.samplasion.batterycustomizerprefs";
+				fallback = "#ff0000";
+				key = "percentage";
+			};
+		},
+		{
+			cell = "PSGroupCell";
+			footerText = "These are the two parts of the battery: the body (the frame of the battery) and the pin (the little part next to the body).";
+			label = "";
+		},
+		{
+			cell = "PSLinkCell";
+			cellClass = "PFSimpleLiteColorCell";
+			label = "Battery body color";
+			libcolorpicker = {
+				alpha = yes;
+				defaults = "com.samplasion.batterycustomizerprefs";
+				fallback = "#ffff00";
+				key = "batterybody";
+			};
+		},
+		{
+			cell = "PSLinkCell";
+			cellClass = "PFSimpleLiteColorCell";
+			label = "Battery pin color";
+			libcolorpicker = {
+				alpha = yes;
+				defaults = "com.samplasion.batterycustomizerprefs";
+				fallback = "#ffff00";
+				key = "batterypin";
+			};
+		},
+		{
+			cell = "PSGroupCell";
+			label = "";
+		},
+		{
+			cell = "PSButtonCell";
+			label = "Respring";
+			action = "respring";
+		},
+		{
+			cell = "PSGroupCell";
+			label = "Links";
+		},
+		{
+			cell = "PSButtonCell";
+			label = "Twitter @Samplasion";
+			action = "twitter";
+		},
+		{
+			cell = "PSButtonCell";
+			label = "GitHub";
+			action = "github";
+		}
+	);
+	"title" = "BatteryCustomizer";
+}

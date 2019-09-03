@@ -1,0 +1,10 @@
+Package: com.samplasion.batterycustomizer
+Name: BatteryCustomizer
+Depends: mobilesubstrate, me.nepeta.libcolorpicker
+Conflicts: com.chasewhip.batterycolor
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Customize every aspect of the battery icon!
+Maintainer: Samplasion
+Author: Samplasion
+Section: Tweaks
