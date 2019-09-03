@@ -1,7 +1,9 @@
 // #pragma Definitions
 
 #define settingsPath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/com.samplasion.batterycustomizerprefs.plist"]
-#define LOG(NSString *logged) NSLog(@"%@", logged)
+static void LOG(NSString *logged) {
+  NSLog(@"%@", logged);
+}
 
 NSMutableDictionary *prefs;
 bool enabled;
