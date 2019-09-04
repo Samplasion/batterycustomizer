@@ -1,3 +1,5 @@
+%config(generator=internal);
+
 // #pragma Definitions
 
 #define settingsPath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/com.samplasion.batterycustomizerprefs.plist"]
