@@ -1,5 +1,3 @@
-%config(generator=internal);
-
 // #pragma Definitions
 
 #define settingsPath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/com.samplasion.batterycustomizerprefs.plist"]
@@ -7,7 +5,7 @@ static void LOG(NSString *logged) {
   NSLog(@"[BatteryCustomizer] %@", logged);
 }
 
-NSMutableDictionary *prefs;
+NSMutableDictionary *prefs = nil;
 bool enabled;
 bool chargingIndicator;
 bool levelIndicator;
@@ -29,6 +27,8 @@ static UIColor *hexToColor(NSString *hexString, NSString *fb) {
 }
 
 static void loadPrefs() {
+  if (prefs != nil) return;
+  LOG(@"Started, loading preferences...");
   prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:settingsPath];
   enabled = [[prefs objectForKey:@"enabled"] boolValue];
   chargingIndicator = [[prefs objectForKey:@"chargingindicator"] boolValue];
@@ -38,6 +38,7 @@ static void loadPrefs() {
   batteryPin = hexToColor([prefs objectForKey:@"batterypin"], @"#ffff00");
   percentageColor = hexToColor([prefs objectForKey:@"percentage"], @"#ff0000");
   [prefs release];
+  LOG(@"Loaded preferences");
 }
 
 // #pragma Interfaces
@@ -116,7 +117,5 @@ static void loadPrefs() {
 %end
 
 %ctor {
-  LOG(@"Started, loading preferences...");
   loadPrefs();
-  LOG(@"Loaded preferences");
 }
